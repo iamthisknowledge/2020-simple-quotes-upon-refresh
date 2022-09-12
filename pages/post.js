@@ -1,0 +1,25 @@
+import { useRouter } from 'next/router';
+import Layout from '../components/MyLayout.js';
+
+const Content = () => {
+    const router = useRouter();
+    return (
+        <>
+        <h1>{router.query.title}</h1>
+        <p>This is the blog post content.</p>
+        </>
+    );
+};
+
+const Page = () => (
+    <Layout>
+        <Content />
+    </Layout>
+);
+
+export default Page;
+
+//As you can see, useRouter allows you to access the
+// router object inside the page, it's a React Hook, and it works with functional components.
+// In the above example you can see useRouter
+// being added to a component other than the exported page.
